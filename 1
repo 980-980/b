@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique Service</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #6a1b9a;
+      --accent: #ffeb3b;
+      --light-bg: #f4f4f4;
+      --card-bg: #ffffff;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 40px;
+      margin: 40px 0;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .services ul {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 0;
+      list-style: none;
+    }
+
+    .services li {
+      background: #ede7f6;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 30%;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .services li:hover {
+      transform: scale(1.05);
+    }
+
+    .swiper {
+      width: 100%;
+      padding-bottom: 40px;
+    }
+
+    /* Adjusted image size for dress design */
+    .swiper-slide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 270px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: auto;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .swiper-slide .quote {
+      width: 40%;
+      padding: 20px;
+      font-style: italic;
+      background: #fce4ec;
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+      margin-left: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    blockquote {
+      font-style: italic;
+      padding: 20px;
+      background: #fce4ec;
+      border-left: 6px solid var(--primary);
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    form input[type="submit"] {
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .services ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .swiper-slide {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .swiper-slide .quote {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Boutique Service</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="services" class="services" data-aos="fade-up">
+      <h2>Our Services</h2>
+      <ul>
+        <li>👗 Personal Shopping</li>
+        <li>🎀 Event Styling</li>
+        <li>💄 Fashion Consultation</li>
+      </ul>
+    </section>
+
+    <section id="gallery" data-aos="fade-up">
+      <h2>Gallery</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Dress Design 1" />
+            <div class="quote">“Elegance is the only beauty that never fades.” – Audrey Hepburn</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1568254183186-d5d8e2bd9de2" alt="Dress Design 2" />
+            <div class="quote">“Fashion is about dreaming and making other people dream.” – Donatella Versace</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Dress Design 3" />
+            <div class="quote">“Style is a way to say who you are without having to speak.” – Rachel Zoe</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136" alt="Dress Design 4" />
+            <div class="quote">“Clothes mean nothing until someone lives in them.” – Marc Jacobs</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1496317556649-f930d733eea0" alt="Dress Design 5" />
+            <div class="quote">“Fashion is the armor to survive the reality of everyday life.” – Bill Cunningham</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1618354691386-6c6d4c365c6c" alt="Dress Design 6" />
+            <div class="quote">“Fashion is an instant language.” – Miuccia Prada</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1521334884684-d80222895322" alt="Dress Design 7" />
+            <div class="quote">“In order to be irreplaceable, one must always be different.” – Coco Chanel</div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section id="testimonials" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <blockquote>“Absolutely loved the styling session! I felt like a queen.” – Meera T.</blockquote>
+      <blockquote>“Our event was magical thanks to their eye for detail!” – Arjun M.</blockquote>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message" />
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Boutique Service. Designed with ❤️
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      autoplay: { delay: 3000, disableOnInteraction: false },
+    });
+  </script>
+</body>
+</html>
